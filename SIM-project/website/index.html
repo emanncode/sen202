@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIM — Security Incident Mapping</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">SIM</span>
+        <span class="brand-sub">Security Incident Mapping</span>
+      </div>
+      <nav class="tabs">
+        <button class="tab-btn active" data-tab="report">Report</button>
+        <button class="tab-btn" data-tab="feed">Incident Feed</button>
+        <button class="tab-btn" data-tab="track">Track Status</button>
+      </nav>
+      <button id="sosBtn" class="sos-btn" title="Emergency alert">SOS</button>
+    </header>
+
+    <main>
+      <!-- REPORT TAB -->
+      <section id="report" class="tab-panel active">
+        <div class="panel-head">
+          <h1>Report a Security Incident</h1>
+          <p>
+            Your report helps keep the campus community safe. Anonymous
+            reporting is available.
+          </p>
+        </div>
+
+        <form id="reportForm" class="card">
+          <div class="field-row">
+            <label
+              >Incident type
+              <select id="incidentType" required>
+                <option value="">Select type…</option>
+                <option>Theft / Stealing</option>
+                <option>Assault / Stabbing</option>
+                <option>Sexual Assault / Rape</option>
+                <option>Harassment</option>
+                <option>Burglary</option>
+                <option>Suspicious Activity</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <label
+              >Campus zone
+              <select id="incidentZone" required>
+                <option value="">Select zone…</option>
+                <option>Male Hostel Block</option>
+                <option>Female Hostel Block</option>
+                <option>Faculty of Science</option>
+                <option>Main Library</option>
+                <option>Sports Complex</option>
+                <option>Off-campus Lodge / Villa</option>
+                <option>School Gate / Perimeter</option>
+                <option>Other</option>
+              </select>
+            </label>
+          </div>
+
+          <label
+            >Description
+            <textarea
+              id="incidentDesc"
+              rows="4"
+              placeholder="What happened? Include time, people involved, and any details that could help security respond."
+              required
+            ></textarea>
+          </label>
+
+          <div class="field-row">
+            <label
+              >Date & time
+              <input type="datetime-local" id="incidentTime" required />
+            </label>
+            <label
+              >Evidence photo (optional)
+              <input type="file" id="incidentPhoto" accept="image/*" />
+            </label>
+          </div>
+
+          <label class="checkbox-row">
+            <input type="checkbox" id="anonToggle" checked />
+            Submit anonymously (your identity will not be shown to other users)
+          </label>
+
+          <button type="submit" class="primary-btn">Submit Report</button>
+          <p id="reportConfirm" class="confirm-msg" hidden>
+            Report submitted. Reference ID: <span id="refId"></span>
+          </p>
+        </form>
+      </section>
+
+      <!-- FEED TAB -->
+      <section id="feed" class="tab-panel">
+        <div class="panel-head">
+          <h1>Incident Feed</h1>
+          <p>Recent reports from the community. Filter by type or zone.</p>
+        </div>
+
+        <div class="filter-bar">
+          <select id="filterType">
+            <option value="">All types</option>
+          </select>
+          <select id="filterZone">
+            <option value="">All zones</option>
+          </select>
+          <button id="clearFilters" class="ghost-btn">Clear</button>
+        </div>
+
+        <div id="feedList" class="feed-list"></div>
+        <p id="emptyFeed" class="empty-state" hidden>
+          No incidents reported yet. When reports come in, they'll appear here.
+        </p>
+      </section>
+
+      <!-- TRACK TAB -->
+      <section id="track" class="tab-panel">
+        <div class="panel-head">
+          <h1>Track My Report</h1>
+          <p>
+            Enter the reference ID you received after submitting to check its
+            status.
+          </p>
+        </div>
+        <div class="card track-card">
+          <input type="text" id="trackInput" placeholder="e.g. SIM-2K7Q" />
+          <button id="trackBtn" class="primary-btn">Check Status</button>
+          <div id="trackResult" class="track-result" hidden></div>
+        </div>
+      </section>
+    </main>
+
+    <div id="sosModal" class="modal" hidden>
+      <div class="modal-card">
+        <h2>Emergency Alert</h2>
+        <p>
+          This will immediately flag your last known zone to campus security as
+          a live emergency. Only use this for real, immediate danger.
+        </p>
+        <div class="modal-actions">
+          <button id="sosConfirm" class="danger-btn">
+            Send Emergency Alert
+          </button>
+          <button id="sosCancel" class="ghost-btn">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>
+        SIM · Security Incident Mapping — SEN202 Weekend 1 project prototype.
+        Demo data is stored locally in your browser only.
+      </p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<svg viewBox="0 0 1600 950" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+<rect width="1600" height="950" fill="white"/>
+<text x="800.0" y="40" font-size="26" font-weight="700" text-anchor="middle" fill="#1a1a2e">Ishikawa (Fishbone) Diagram — Campus Security Incident Underreporting</text>
+<line x1="160" y1="480" x2="1230" y2="480" stroke="#1a1a2e" stroke-width="4"/>
+<polygon points="1230,466 1260,480 1230,494" fill="#1a1a2e"/>
+<rect x="1260" y="400" width="300" height="160" rx="10" fill="#c0392b" stroke="#1a1a2e" stroke-width="3"/>
+<text x="1410.0" y="450" font-size="16" font-weight="700" fill="white" text-anchor="middle">EFFECT</text>
+<text x="1410.0" y="480" font-size="14.5" fill="white" text-anchor="middle">Rising campus insecurity due</text>
+<text x="1410.0" y="502" font-size="14.5" fill="white" text-anchor="middle">to underreported &amp; poorly</text>
+<text x="1410.0" y="524" font-size="14.5" fill="white" text-anchor="middle">tracked security incidents</text>
+<polygon points="160,480 110,450 110,510" fill="#1a1a2e"/>
+<line x1="130" y1="130" x2="340" y2="480" stroke="#16537e" stroke-width="3"/>
+<rect x="0.0" y="84" width="260" height="40" rx="6" fill="#16537e"/>
+<text x="130" y="109.0" font-size="15" font-weight="700" fill="white" text-anchor="middle">PEOPLE</text>
+<line x1="167.8" y1="193.0" x2="138.64524052577352" y2="210.4928556845359" stroke="#444" stroke-width="1.5"/>
+<text x="132.64524052577352" y="214.4928556845359" font-size="12.5" fill="#222" text-anchor="end">Fear of retaliation from suspects</text>
+<line x1="215.4" y1="272.33333333333337" x2="186.2452405257735" y2="289.8261890178693" stroke="#444" stroke-width="1.5"/>
+<text x="180.2452405257735" y="293.8261890178693" font-size="12.5" fill="#222" text-anchor="end">Distrust of campus security staff</text>
+<line x1="263.0" y1="351.66666666666663" x2="233.8452405257735" y2="369.15952235120255" stroke="#444" stroke-width="1.5"/>
+<text x="227.8452405257735" y="373.15952235120255" font-size="12.5" fill="#222" text-anchor="end">Low awareness of reporting channels</text>
+<line x1="310.6" y1="431.00000000000006" x2="281.4452405257735" y2="448.492855684536" stroke="#444" stroke-width="1.5"/>
+<text x="275.4452405257735" y="452.492855684536" font-size="12.5" fill="#222" text-anchor="end">Reluctance to give witness statements</text>
+<line x1="480" y1="130" x2="690" y2="480" stroke="#16537e" stroke-width="3"/>
+<rect x="350.0" y="84" width="260" height="40" rx="6" fill="#16537e"/>
+<text x="480" y="109.0" font-size="15" font-weight="700" fill="white" text-anchor="middle">TECHNOLOGY</text>
+<line x1="517.8" y1="193.0" x2="488.64524052577343" y2="210.4928556845359" stroke="#444" stroke-width="1.5"/>
+<text x="482.64524052577343" y="214.4928556845359" font-size="12.5" fill="#222" text-anchor="end">No centralized reporting platform</text>
+<line x1="565.4" y1="272.33333333333337" x2="536.2452405257735" y2="289.8261890178693" stroke="#444" stroke-width="1.5"/>
+<text x="530.2452405257735" y="293.8261890178693" font-size="12.5" fill="#222" text-anchor="end">Poor network/data access in hostels</text>
+<line x1="613.0" y1="351.66666666666663" x2="583.8452405257735" y2="369.15952235120255" stroke="#444" stroke-width="1.5"/>
+<text x="577.8452405257735" y="373.15952235120255" font-size="12.5" fill="#222" text-anchor="end">No real-time alert / notification system</text>
+<line x1="660.6" y1="431.00000000000006" x2="631.4452405257736" y2="448.492855684536" stroke="#444" stroke-width="1.5"/>
+<text x="625.4452405257736" y="452.492855684536" font-size="12.5" fill="#222" text-anchor="end">No evidence upload (photo/video) option</text>
+<line x1="830" y1="130" x2="1040" y2="480" stroke="#16537e" stroke-width="3"/>
+<rect x="700.0" y="84" width="260" height="40" rx="6" fill="#16537e"/>
+<text x="830" y="109.0" font-size="15" font-weight="700" fill="white" text-anchor="middle">POLICY &amp;amp; MANAGEMENT</text>
+<line x1="867.8" y1="193.0" x2="838.6452405257735" y2="210.4928556845359" stroke="#444" stroke-width="1.5"/>
+<text x="832.6452405257735" y="214.4928556845359" font-size="12.5" fill="#222" text-anchor="end">No standard campus security policy</text>
+<line x1="915.4" y1="272.33333333333337" x2="886.2452405257735" y2="289.8261890178693" stroke="#444" stroke-width="1.5"/>
+<text x="880.2452405257735" y="293.8261890178693" font-size="12.5" fill="#222" text-anchor="end">Understaffed security department</text>
+<line x1="963.0" y1="351.66666666666663" x2="933.8452405257735" y2="369.15952235120255" stroke="#444" stroke-width="1.5"/>
+<text x="927.8452405257735" y="373.15952235120255" font-size="12.5" fill="#222" text-anchor="end">Weak coordination with local police</text>
+<line x1="1010.6" y1="431.00000000000006" x2="981.4452405257736" y2="448.492855684536" stroke="#444" stroke-width="1.5"/>
+<text x="975.4452405257736" y="452.492855684536" font-size="12.5" fill="#222" text-anchor="end">No protection policy for whistleblowers</text>
+<line x1="130" y1="850" x2="340" y2="480" stroke="#16537e" stroke-width="3"/>
+<rect x="0.0" y="856" width="260" height="40" rx="6" fill="#16537e"/>
+<text x="130" y="881.0" font-size="15" font-weight="700" fill="white" text-anchor="middle">PROCESS</text>
+<line x1="167.8" y1="783.4" x2="138.2306788819693" y2="766.617412338415" stroke="#444" stroke-width="1.5"/>
+<text x="132.2306788819693" y="770.617412338415" font-size="12.5" fill="#222" text-anchor="end">No standardized reporting procedure</text>
+<line x1="215.4" y1="699.5333333333333" x2="185.83067888196933" y2="682.7507456717483" stroke="#444" stroke-width="1.5"/>
+<text x="179.83067888196933" y="686.7507456717483" font-size="12.5" fill="#222" text-anchor="end">Slow response after a report is made</text>
+<line x1="263.0" y1="615.6666666666667" x2="233.4306788819693" y2="598.8840790050817" stroke="#444" stroke-width="1.5"/>
+<text x="227.4306788819693" y="602.8840790050817" font-size="12.5" fill="#222" text-anchor="end">No feedback/status update to reporter</text>
+<line x1="310.6" y1="531.8" x2="281.0306788819693" y2="515.0174123384149" stroke="#444" stroke-width="1.5"/>
+<text x="275.0306788819693" y="519.0174123384149" font-size="12.5" fill="#222" text-anchor="end">Manual, paper-based logging of cases</text>
+<line x1="480" y1="850" x2="690" y2="480" stroke="#16537e" stroke-width="3"/>
+<rect x="350.0" y="856" width="260" height="40" rx="6" fill="#16537e"/>
+<text x="480" y="881.0" font-size="15" font-weight="700" fill="white" text-anchor="middle">ENVIRONMENT / INFRASTRUCTURE</text>
+<line x1="517.8" y1="783.4" x2="488.23067888196925" y2="766.617412338415" stroke="#444" stroke-width="1.5"/>
+<text x="482.23067888196925" y="770.617412338415" font-size="12.5" fill="#222" text-anchor="end">Poorly lit walkways and hostel areas</text>
+<line x1="565.4" y1="699.5333333333333" x2="535.8306788819693" y2="682.7507456717483" stroke="#444" stroke-width="1.5"/>
+<text x="529.8306788819693" y="686.7507456717483" font-size="12.5" fill="#222" text-anchor="end">Isolated off-campus lodges/landlord property</text>
+<line x1="613.0" y1="615.6666666666667" x2="583.4306788819694" y2="598.8840790050817" stroke="#444" stroke-width="1.5"/>
+<text x="577.4306788819694" y="602.8840790050817" font-size="12.5" fill="#222" text-anchor="end">Unmonitored gates and back routes</text>
+<line x1="660.6" y1="531.8" x2="631.0306788819694" y2="515.0174123384149" stroke="#444" stroke-width="1.5"/>
+<text x="625.0306788819694" y="519.0174123384149" font-size="12.5" fill="#222" text-anchor="end">Insufficient CCTV coverage</text>
+<line x1="830" y1="850" x2="1040" y2="480" stroke="#16537e" stroke-width="3"/>
+<rect x="700.0" y="856" width="260" height="40" rx="6" fill="#16537e"/>
+<text x="830" y="881.0" font-size="15" font-weight="700" fill="white" text-anchor="middle">CULTURE &amp;amp; SOCIAL NORMS</text>
+<line x1="867.8" y1="783.4" x2="838.2306788819693" y2="766.617412338415" stroke="#444" stroke-width="1.5"/>
+<text x="832.2306788819693" y="770.617412338415" font-size="12.5" fill="#222" text-anchor="end">Stigma around reporting (‘snitching’)</text>
+<line x1="915.4" y1="699.5333333333333" x2="885.8306788819693" y2="682.7507456717483" stroke="#444" stroke-width="1.5"/>
+<text x="879.8306788819693" y="686.7507456717483" font-size="12.5" fill="#222" text-anchor="end">Normalization of minor crimes</text>
+<line x1="963.0" y1="615.6666666666667" x2="933.4306788819694" y2="598.8840790050817" stroke="#444" stroke-width="1.5"/>
+<text x="927.4306788819694" y="602.8840790050817" font-size="12.5" fill="#222" text-anchor="end">Peer pressure to stay silent</text>
+<line x1="1010.6" y1="531.8" x2="981.0306788819694" y2="515.0174123384149" stroke="#444" stroke-width="1.5"/>
+<text x="975.0306788819694" y="519.0174123384149" font-size="12.5" fill="#222" text-anchor="end">Low trust in outcome of past reports</text>
+</svg>
