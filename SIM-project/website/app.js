@@ -32,7 +32,9 @@ function showToast(msg) {
   el.style.animation = "none";
   void el.offsetHeight;
   el.style.animation = "toastUp 0.35s ease";
-  setTimeout(() => { el.hidden = true; }, 3500);
+  setTimeout(() => {
+    el.hidden = true;
+  }, 3500);
 }
 
 // ---------- Tab navigation ----------
@@ -72,7 +74,10 @@ descField.addEventListener("input", () => {
 photoInput.addEventListener("change", () => {
   const err = document.getElementById("photoError");
   const file = photoInput.files[0];
-  if (!file) { err.hidden = true; return; }
+  if (!file) {
+    err.hidden = true;
+    return;
+  }
   if (file.size > MAX_PHOTO_SIZE) {
     err.textContent = "File too large. Maximum 2 MB.";
     err.hidden = false;
@@ -183,7 +188,11 @@ function renderFeed() {
   emptyFeed.hidden = filtered.length > 0;
 
   if (filtered.length > 0) {
-    reportCount.textContent = filtered.length + " / " + reports.length + (reports.length === 1 ? " report" : " reports");
+    reportCount.textContent =
+      filtered.length +
+      " / " +
+      reports.length +
+      (reports.length === 1 ? " report" : " reports");
     reportCount.hidden = false;
   } else {
     reportCount.hidden = true;
