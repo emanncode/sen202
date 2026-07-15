@@ -9,32 +9,45 @@
   <body>
     <header class="topbar">
       <div class="brand">
-        <span class="brand-mark">SIM</span>
-        <span class="brand-sub">Security Incident Mapping</span>
+        <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        <div>
+          <span class="brand-mark">SIM</span>
+          <span class="brand-sub">Security Incident Mapping</span>
+        </div>
       </div>
       <nav class="tabs">
-        <button class="tab-btn active" data-tab="report">Report</button>
-        <button class="tab-btn" data-tab="feed">Incident Feed</button>
-        <button class="tab-btn" data-tab="track">Track Status</button>
+        <button class="tab-btn active" data-tab="report">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2a3 3 0 0 0-3 3v1H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-2V5a3 3 0 0 0-3-3z"/><path d="M10 12v3"/><circle cx="10" cy="10" r="1" fill="currentColor"/></svg>
+          Report
+        </button>
+        <button class="tab-btn" data-tab="feed">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="M7 7h6M7 10h4M7 13h2"/></svg>
+          Feed
+        </button>
+        <button class="tab-btn" data-tab="track">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><path d="M10 7v3l2 2"/></svg>
+          Track
+        </button>
       </nav>
-      <button id="sosBtn" class="sos-btn" title="Emergency alert">SOS</button>
+      <button id="sosBtn" class="sos-btn" title="Emergency alert">
+        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 2a1 1 0 0 1 .993.883L11 3v1h1a1 1 0 0 1 .117 1.993L12 6h-1v1.34a8 8 0 0 1 4.5 5.414l.054.246H4.446l.054-.246A8 8 0 0 1 9 7.34V6H8a1 1 0 0 1-.993-.883L7 5a1 1 0 0 1 .883-.993L8 4h1V3a1 1 0 0 1 1-1z"/></svg>
+        SOS
+      </button>
     </header>
 
     <main>
       <!-- REPORT TAB -->
       <section id="report" class="tab-panel active">
         <div class="panel-head">
-          <h1>Report a Security Incident</h1>
-          <p>
-            Your report helps keep the campus community safe. Anonymous
-            reporting is available.
-          </p>
+          <h1>Report an Incident</h1>
+          <p>Your report helps keep the campus community safe. Anonymous reporting is available.</p>
         </div>
 
         <form id="reportForm" class="card">
           <div class="field-row">
-            <label
-              >Incident type
+            <label>Incident type
               <select id="incidentType" required>
                 <option value="">Select type…</option>
                 <option>Theft / Stealing</option>
@@ -46,8 +59,7 @@
                 <option>Other</option>
               </select>
             </label>
-            <label
-              >Campus zone
+            <label>Campus zone
               <select id="incidentZone" required>
                 <option value="">Select zone…</option>
                 <option>Male Hostel Block</option>
@@ -62,25 +74,16 @@
             </label>
           </div>
 
-          <label
-            >Description
-            <textarea
-              id="incidentDesc"
-              rows="4"
-              maxlength="2000"
-              placeholder="What happened? Include time, people involved, and any details that could help security respond."
-              required
-            ></textarea>
+          <label>Description
+            <textarea id="incidentDesc" rows="4" maxlength="2000" placeholder="What happened? Include time, people involved, and any details that could help security respond." required></textarea>
             <span class="char-count"><span id="charUsed">0</span>/2000</span>
           </label>
 
           <div class="field-row">
-            <label
-              >Date & time
+            <label>Date & time
               <input type="datetime-local" id="incidentTime" required />
             </label>
-            <label
-              >Evidence photo (optional, max 2 MB)
+            <label>Evidence photo <span class="label-note">optional, max 2 MB</span>
               <input type="file" id="incidentPhoto" accept="image/*" />
               <span id="photoError" class="field-error" hidden></span>
             </label>
@@ -91,8 +94,14 @@
             Submit anonymously (your identity will not be shown to other users)
           </label>
 
-          <button type="submit" class="primary-btn">Submit Report</button>
+          <div class="form-actions">
+            <button type="submit" class="primary-btn">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2a3 3 0 0 0-3 3v1H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-2V5a3 3 0 0 0-3-3z"/><path d="M10 12v3"/><circle cx="10" cy="10" r="1" fill="currentColor"/></svg>
+              Submit Report
+            </button>
+          </div>
           <p id="reportConfirm" class="confirm-msg" hidden>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
             Report submitted. Reference ID: <span id="refId"></span>
           </p>
         </form>
@@ -106,18 +115,21 @@
         </div>
 
         <div class="filter-bar">
-          <select id="filterType">
-            <option value="">All types</option>
-          </select>
-          <select id="filterZone">
-            <option value="">All zones</option>
-          </select>
-          <button id="clearFilters" class="ghost-btn">Clear</button>
+          <div class="filter-group">
+            <select id="filterType">
+              <option value="">All types</option>
+            </select>
+            <select id="filterZone">
+              <option value="">All zones</option>
+            </select>
+            <button id="clearFilters" class="ghost-btn">Clear</button>
+          </div>
           <span id="reportCount" class="count-badge" hidden></span>
         </div>
 
         <div id="feedList" class="feed-list"></div>
         <p id="emptyFeed" class="empty-state" hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
           No incidents reported yet. When reports come in, they'll appear here.
         </p>
       </section>
@@ -126,14 +138,16 @@
       <section id="track" class="tab-panel">
         <div class="panel-head">
           <h1>Track My Report</h1>
-          <p>
-            Enter the reference ID you received after submitting to check its
-            status.
-          </p>
+          <p>Enter the reference ID you received after submitting to check its status.</p>
         </div>
         <div class="card track-card">
-          <input type="text" id="trackInput" placeholder="e.g. SIM-2K7Q" />
-          <button id="trackBtn" class="primary-btn">Check Status</button>
+          <div class="track-input-group">
+            <input type="text" id="trackInput" placeholder="e.g. SIM-2K7Q" />
+            <button id="trackBtn" class="primary-btn">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><path d="M10 7v3l2 2"/></svg>
+              Check
+            </button>
+          </div>
           <div id="trackResult" class="track-result" hidden></div>
         </div>
       </section>
@@ -141,13 +155,14 @@
 
     <div id="sosModal" class="modal" hidden>
       <div class="modal-card">
+        <div class="modal-icon danger-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
         <h2>Emergency Alert</h2>
-        <p>
-          This will immediately flag your last known zone to campus security as
-          a live emergency. Only use this for real, immediate danger.
-        </p>
+        <p>This will immediately flag your last known zone to campus security as a live emergency. Only use this for real, immediate danger.</p>
         <div class="modal-actions">
           <button id="sosConfirm" class="danger-btn">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 2a1 1 0 01.993.883L11 3v1h1a1 1 0 01.117 1.993L12 6h-1v1.34a8 8 0 014.5 5.414l.054.246H4.446l.054-.246A8 8 0 019 7.34V6H8a1 1 0 01-.993-.883L7 5a1 1 0 01.883-.993L8 4h1V3a1 1 0 011-1z"/></svg>
             Send Emergency Alert
           </button>
           <button id="sosCancel" class="ghost-btn">Cancel</button>
@@ -158,10 +173,7 @@
     <div id="toast" class="toast" hidden></div>
 
     <footer>
-      <p>
-        SIM · Security Incident Mapping — SEN202 Weekend 1 project prototype.
-        Demo data is stored locally in your browser only.
-      </p>
+      <p>SIM · Security Incident Mapping — SEN202 Weekend 1 project prototype. Demo data is stored locally in your browser only.</p>
     </footer>
 
     <script src="app.js"></script>

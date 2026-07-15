@@ -31,7 +31,7 @@ function showToast(msg) {
   el.hidden = false;
   el.style.animation = "none";
   void el.offsetHeight;
-  el.style.animation = "toastIn 0.3s ease";
+  el.style.animation = "toastUp 0.35s ease";
   setTimeout(() => { el.hidden = true; }, 3500);
 }
 
