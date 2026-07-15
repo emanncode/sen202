@@ -8,6 +8,7 @@ const HIGH_SEVERITY = [
   "Burglary",
 ];
 const STATUSES = ["Received", "Verified", "In-Progress", "Resolved"];
+const MAX_PHOTO_SIZE = 2 * 1024 * 1024; // 2 MB
 
 function loadReports() {
   try {
@@ -23,6 +24,17 @@ function genRefId() {
   return "SIM-" + Math.random().toString(36).slice(2, 6).toUpperCase();
 }
 
+// ---------- Toast ----------
+function showToast(msg) {
+  const el = document.getElementById("toast");
+  el.textContent = msg;
+  el.hidden = false;
+  el.style.animation = "none";
+  void el.offsetHeight;
+  el.style.animation = "toastIn 0.3s ease";
+  setTimeout(() => { el.hidden = true; }, 3500);
+}
+
 // ---------- Tab navigation ----------
 document.querySelectorAll(".tab-btn").forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -35,6 +47,9 @@ document.querySelectorAll(".tab-btn").forEach((btn) => {
     btn.classList.add("active");
     document.getElementById(btn.dataset.tab).classList.add("active");
     if (btn.dataset.tab === "feed") renderFeed();
+    if (btn.dataset.tab === "report") {
+      document.getElementById("reportConfirm").hidden = true;
+    }
   });
 });
 
@@ -42,10 +57,37 @@ document.querySelectorAll(".tab-btn").forEach((btn) => {
 const reportForm = document.getElementById("reportForm");
 const photoInput = document.getElementById("incidentPhoto");
 
-// default datetime to now
 document.getElementById("incidentTime").value = new Date()
   .toISOString()
   .slice(0, 16);
+
+// Character count
+const descField = document.getElementById("incidentDesc");
+const charUsed = document.getElementById("charUsed");
+descField.addEventListener("input", () => {
+  charUsed.textContent = descField.value.length;
+});
+
+// Photo validation
+photoInput.addEventListener("change", () => {
+  const err = document.getElementById("photoError");
+  const file = photoInput.files[0];
+  if (!file) { err.hidden = true; return; }
+  if (file.size > MAX_PHOTO_SIZE) {
+    err.textContent = "File too large. Maximum 2 MB.";
+    err.hidden = false;
+    photoInput.value = "";
+    return;
+  }
+  const validTypes = ["image/jpeg", "image/png", "image/webp", "image/gif"];
+  if (!validTypes.includes(file.type)) {
+    err.textContent = "Please select a JPEG, PNG, WebP, or GIF image.";
+    err.hidden = false;
+    photoInput.value = "";
+    return;
+  }
+  err.hidden = true;
+});
 
 reportForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -81,12 +123,16 @@ reportForm.addEventListener("submit", (e) => {
       .toISOString()
       .slice(0, 16);
     document.getElementById("anonToggle").checked = true;
+    charUsed.textContent = "0";
+    document.getElementById("photoError").hidden = true;
     populateFilters();
+    showToast("Report submitted. Reference: " + refId);
   };
 
   if (file) {
     const reader = new FileReader();
     reader.onload = () => finish(reader.result);
+    reader.onerror = () => showToast("Failed to read photo. Please try again.");
     reader.readAsDataURL(file);
   } else {
     finish(null);
@@ -98,6 +144,7 @@ const feedList = document.getElementById("feedList");
 const emptyFeed = document.getElementById("emptyFeed");
 const filterType = document.getElementById("filterType");
 const filterZone = document.getElementById("filterZone");
+const reportCount = document.getElementById("reportCount");
 
 function populateFilters() {
   const reports = loadReports();
@@ -135,6 +182,13 @@ function renderFeed() {
   feedList.innerHTML = "";
   emptyFeed.hidden = filtered.length > 0;
 
+  if (filtered.length > 0) {
+    reportCount.textContent = filtered.length + " / " + reports.length + (reports.length === 1 ? " report" : " reports");
+    reportCount.hidden = false;
+  } else {
+    reportCount.hidden = true;
+  }
+
   filtered.forEach((r) => {
     const el = document.createElement("div");
     el.className = "feed-item" + (r.severity === "high" ? " high" : "");
@@ -166,7 +220,7 @@ document.getElementById("clearFilters").addEventListener("click", () => {
 });
 
 // ---------- Track status ----------
-document.getElementById("trackBtn").addEventListener("click", () => {
+function trackReport() {
   const id = document.getElementById("trackInput").value.trim().toUpperCase();
   const result = document.getElementById("trackResult");
   const reports = loadReports();
@@ -182,6 +236,11 @@ document.getElementById("trackBtn").addEventListener("click", () => {
     Status: <span class="status-badge status-${found.status}">${found.status}</span><br>
     Reported ${timeAgo(found.createdAt)}
   `;
+}
+
+document.getElementById("trackBtn").addEventListener("click", trackReport);
+document.getElementById("trackInput").addEventListener("keydown", (e) => {
+  if (e.key === "Enter") trackReport();
 });
 
 // ---------- SOS modal ----------
@@ -192,6 +251,9 @@ document
 document
   .getElementById("sosCancel")
   .addEventListener("click", () => (sosModal.hidden = true));
+sosModal.addEventListener("click", (e) => {
+  if (e.target === sosModal) sosModal.hidden = true;
+});
 document.getElementById("sosConfirm").addEventListener("click", () => {
   const reports = loadReports();
   const refId = genRefId();
@@ -209,7 +271,7 @@ document.getElementById("sosConfirm").addEventListener("click", () => {
   });
   saveReports(reports);
   sosModal.hidden = true;
-  alert("Emergency alert sent to campus security. Reference: " + refId);
+  showToast("Emergency alert sent to campus security. Reference: " + refId);
   populateFilters();
 });
 

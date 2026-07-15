@@ -67,9 +67,11 @@
             <textarea
               id="incidentDesc"
               rows="4"
+              maxlength="2000"
               placeholder="What happened? Include time, people involved, and any details that could help security respond."
               required
             ></textarea>
+            <span class="char-count"><span id="charUsed">0</span>/2000</span>
           </label>
 
           <div class="field-row">
@@ -78,8 +80,9 @@
               <input type="datetime-local" id="incidentTime" required />
             </label>
             <label
-              >Evidence photo (optional)
+              >Evidence photo (optional, max 2 MB)
               <input type="file" id="incidentPhoto" accept="image/*" />
+              <span id="photoError" class="field-error" hidden></span>
             </label>
           </div>
 
@@ -110,6 +113,7 @@
             <option value="">All zones</option>
           </select>
           <button id="clearFilters" class="ghost-btn">Clear</button>
+          <span id="reportCount" class="count-badge" hidden></span>
         </div>
 
         <div id="feedList" class="feed-list"></div>
@@ -150,6 +154,8 @@
         </div>
       </div>
     </div>
+
+    <div id="toast" class="toast" hidden></div>
 
     <footer>
       <p>
